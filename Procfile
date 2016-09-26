@@ -1,1 +1,1 @@
-web: ruby config.ru -p 8080
+web: ruby config.ru -p $PORT
