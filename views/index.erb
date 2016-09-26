@@ -26,8 +26,27 @@
       <tr><td>Düsseldorf</td><td>Altbier</td><tr>
       <tr><td>Bavaria</td><td>Hefeweizen</td><tr>
       <tr><td>Leipzig</td><td>Gose Beer</td><tr>
-    </table>
-    <div>You have been served by server <%= ENV["INSTANCE_INDEX"].to_i + 1 %></div>
+        <% data.each do |beer| %>
+          <tr><td><%= beer[:region] %></td><td><%= beer[:brand] %></td><tr>
+        <% end %>
+      </table>
+
+
+      <h4>Why not add a new beer?</h4>
+      <form method="post" action="/create" class="form-inline">
+        <div class="form-group">
+          <label for="region">Region</label>
+          <input type="text" class="form-control" name="region" name="region"><br>
+        </div>
+        <div class="form-group">
+          <label for="brand">Brand</label>
+          <input type="text" class="form-control" id="brand" name="brand">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+      <br><br>
+      <div>You have been served by server <%= ENV["INSTANCE_INDEX"].to_i + 1 %></div>
     </div>
   </body>
 </html>

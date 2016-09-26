@@ -3,9 +3,11 @@ GEM
   specs:
     daemons (1.2.4)
     eventmachine (1.2.0.1)
+    mysql2 (0.4.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    sequel (4.38.0)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -20,8 +22,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  mysql2
+  sequel
   sinatra
   thin
 
 BUNDLED WITH
-   1.11.0
+   1.13.1
